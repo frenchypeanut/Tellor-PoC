@@ -1,0 +1,5 @@
+const OracleWithTellor = artifacts.require("OracleWithTellor");
+
+module.exports = function(deployer) {
+  deployer.deploy(OracleWithTellor);
+};
