@@ -1,0 +1,4478 @@
+{
+  "contractName": "OracleIDDescriptions",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_tellorStatus",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "_status",
+          "type": "int256"
+        }
+      ],
+      "name": "StatusMapped",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_requestID",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "_id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "TellorIdMappedToBytes",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tellorStatus",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int256",
+          "name": "_status",
+          "type": "int256"
+        }
+      ],
+      "name": "defineTellorCodeToStatusCode",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "defineTellorIdToBytesID",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "_status",
+          "type": "int256"
+        }
+      ],
+      "name": "getTellorStatusFromStatus",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tellorStatus",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tellorStatus",
+          "type": "uint256"
+        }
+      ],
+      "name": "getStatusFromTellorStatus",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "_status",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getTellorIdFromBytes",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getBytesFromTellorID",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_id",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_tellorStatus\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"_status\",\"type\":\"int256\"}],\"name\":\"StatusMapped\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_requestID\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"_id\",\"type\":\"bytes32\"}],\"name\":\"TellorIdMappedToBytes\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tellorStatus\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"_status\",\"type\":\"int256\"}],\"name\":\"defineTellorCodeToStatusCode\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_requestID\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_id\",\"type\":\"bytes32\"}],\"name\":\"defineTellorIdToBytesID\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"}],\"name\":\"getBytesFromTellorID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"_id\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tellorStatus\",\"type\":\"uint256\"}],\"name\":\"getStatusFromTellorStatus\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"_status\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_id\",\"type\":\"bytes32\"}],\"name\":\"getTellorIdFromBytes\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"int256\",\"name\":\"_status\",\"type\":\"int256\"}],\"name\":\"getTellorStatusFromStatus\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_tellorStatus\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"defineTellorCodeToStatusCode(uint256,int256)\":{\"details\":\"This fuction allows the owner to map the tellor uint data status code to the standarized  ADO int status code such as null, retreived etc... _tellorStatus uint the tellor status _status the data ADO standarized int status\"},\"defineTellorIdToBytesID(uint256,bytes32)\":{\"details\":\"Allows owner to map the standarized bytes32 Id to a specific requestID from Tellor The dev should ensure the _requestId exists otherwise request the data on Tellor to get a requestId _requestID is the existing Tellor RequestID  _id is the descption of the ID in bytes \"},\"getBytesFromTellorID(uint256)\":{\"details\":\"Getter function of the bytes32 ADO standaraized _id based on the specified Tellor RequestID \",\"params\":{\"_requestId\":\"is Tellor's requestID\"},\"return\":\"_id is the bytes32 descriptor mapped to an existing Tellor's requestId\"},\"getStatusFromTellorStatus(uint256)\":{\"details\":\"Getter function of the int ADO standarized status code from the specified Tellor uint status\",\"params\":{\"_tellorStatus\":\"uint \"},\"return\":\"_status the int ADO standarized status\"},\"getTellorIdFromBytes(bytes32)\":{\"details\":\"Getter function of the Tellor RequestID based on the specified bytes32 ADO standaraized _id\",\"params\":{\"_id\":\"is the bytes32 descriptor mapped to an existing Tellor's requestId\"},\"return\":\"_requestId is Tellor's requestID corresnpoding to _id\"},\"getTellorStatusFromStatus(int256)\":{\"details\":\"Getter function for the uint Tellor status code from the specified int ADO standarized status code\",\"params\":{\"_status\":\"the int ADO standarized status\"},\"return\":\"_tellorStatus uint \"},\"transferOwnership(address)\":{\"details\":\"This fucntion allows for ownership transfer\",\"params\":{\"newOwner\":\"is the address for the new owner\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/OracleIDDescriptions.sol\":\"OracleIDDescriptions\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/OracleIDDescriptions.sol\":{\"keccak256\":\"0x75dd9f9d70302117fd80800c5dc84fca0a31b92fd92f7e5598b99d09d25bbb7d\",\"urls\":[\"bzz-raw://9a6547b017d857fe00b3ae54e34d2cc621e8abeabbeb941ae4767726e0186bd1\",\"dweb:/ipfs/QmWTgnpMktKLAeMS3jKDUDYNT2DrMg5CyeX7ELRK1yPbFa\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5033600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506106d3806100616000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c8063b70b19cb1161005b578063b70b19cb14610193578063c4e9e950146101d5578063d271d77e14610217578063f2fde38b1461024f57610088565b80630a3ff7db1461008d5780635aa6fdd1146100cf57806367cfa3f8146101075780638da5cb5b14610149575b600080fd5b6100b9600480360360208110156100a357600080fd5b8101908080359060200190929190505050610293565b6040518082815260200191505060405180910390f35b610105600480360360408110156100e557600080fd5b8101908080359060200190929190803590602001909291905050506102af565b005b6101336004803603602081101561011d57600080fd5b81019080803590602001909291905050506103e4565b6040518082815260200191505060405180910390f35b610151610401565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101bf600480360360208110156101a957600080fd5b8101908080359060200190929190505050610427565b6040518082815260200191505060405180910390f35b610201600480360360208110156101eb57600080fd5b8101908080359060200190929190505050610444565b6040518082815260200191505060405180910390f35b61024d6004803603604081101561022d57600080fd5b810190808035906020019092919080359060200190929190505050610461565b005b6102916004803603602081101561026557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610597565b005b6000806000838152602001908152602001600020549050919050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610372576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53656e646572206973206e6f74206f776e65720000000000000000000000000081525060200191505060405180910390fd5b80600080848152602001908152602001600020819055508160016000838152602001908152602001600020819055507f6d663ee2b4cf058e66f9e5a74c6155bde58a5a717d01ccfb8befad11118c7db18282604051808381526020018281526020019250505060405180910390a15050565b600060026000838152602001908152602001600020549050919050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060036000838152602001908152602001600020549050919050565b600060016000838152602001908152602001600020549050919050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610524576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53656e646572206973206e6f74206f776e65720000000000000000000000000081525060200191505060405180910390fd5b8060026000848152602001908152602001600020819055508160036000838152602001908152602001600020819055507f39d6d5c60e8a0e6f18c49fecf0e34ed043875e510e7ef7ba724731f8d72a6d168282604051808381526020018281526020019250505060405180910390a15050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461065a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53656e646572206973206e6f74206f776e65720000000000000000000000000081525060200191505060405180910390fd5b80600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea265627a7a72315820ed145719c33a41e0a62d2bf91cf59e45f35dc61801a99d14c492a00ee5f7a61664736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c8063b70b19cb1161005b578063b70b19cb14610193578063c4e9e950146101d5578063d271d77e14610217578063f2fde38b1461024f57610088565b80630a3ff7db1461008d5780635aa6fdd1146100cf57806367cfa3f8146101075780638da5cb5b14610149575b600080fd5b6100b9600480360360208110156100a357600080fd5b8101908080359060200190929190505050610293565b6040518082815260200191505060405180910390f35b610105600480360360408110156100e557600080fd5b8101908080359060200190929190803590602001909291905050506102af565b005b6101336004803603602081101561011d57600080fd5b81019080803590602001909291905050506103e4565b6040518082815260200191505060405180910390f35b610151610401565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101bf600480360360208110156101a957600080fd5b8101908080359060200190929190505050610427565b6040518082815260200191505060405180910390f35b610201600480360360208110156101eb57600080fd5b8101908080359060200190929190505050610444565b6040518082815260200191505060405180910390f35b61024d6004803603604081101561022d57600080fd5b810190808035906020019092919080359060200190929190505050610461565b005b6102916004803603602081101561026557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610597565b005b6000806000838152602001908152602001600020549050919050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610372576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53656e646572206973206e6f74206f776e65720000000000000000000000000081525060200191505060405180910390fd5b80600080848152602001908152602001600020819055508160016000838152602001908152602001600020819055507f6d663ee2b4cf058e66f9e5a74c6155bde58a5a717d01ccfb8befad11118c7db18282604051808381526020018281526020019250505060405180910390a15050565b600060026000838152602001908152602001600020549050919050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060036000838152602001908152602001600020549050919050565b600060016000838152602001908152602001600020549050919050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610524576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53656e646572206973206e6f74206f776e65720000000000000000000000000081525060200191505060405180910390fd5b8060026000848152602001908152602001600020819055508160036000838152602001908152602001600020819055507f39d6d5c60e8a0e6f18c49fecf0e34ed043875e510e7ef7ba724731f8d72a6d168282604051808381526020018281526020019250505060405180910390a15050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461065a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53656e646572206973206e6f74206f776e65720000000000000000000000000081525060200191505060405180910390fd5b80600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea265627a7a72315820ed145719c33a41e0a62d2bf91cf59e45f35dc61801a99d14c492a00ee5f7a61664736f6c63430005100032",
+  "sourceMap": "86:3482:2:-;;;519:54;8:9:-1;5:2;;;30:1;27;20:12;5:2;519:54:2;556:10;549:5;;:17;;;;;;;;;;;;;;;;;;86:3482;;;;;;",
+  "deployedSourceMap": "86:3482:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;86:3482:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3432:133;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3432:133:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1764:281;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1764:281:2;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2617:150;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2617:150:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;333:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;2263:142;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2263:142:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;3048:127;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3048:127:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1132:312;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1132:312:2;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;704:156;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;704:156:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;3432:133;3499:11;3529:17;:29;3547:10;3529:29;;;;;;;;;;;;3522:36;;3432:133;;;:::o;1764:281::-;1867:5;;;;;;;;;;;1853:19;;:10;:19;;;1845:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1938:3;1906:17;:29;1924:10;1906:29;;;;;;;;;;;:35;;;;1976:10;1951:17;:22;1969:3;1951:22;;;;;;;;;;;:35;;;;2001:37;2023:10;2034:3;2001:37;;;;;;;;;;;;;;;;;;;;;;;;1764:281;;:::o;2617:150::-;2693:11;2723:22;:37;2746:13;2723:37;;;;;;;;;;;;2716:44;;2617:150;;;:::o;333:20::-;;;;;;;;;;;;;:::o;2263:142::-;2331:18;2367:22;:31;2390:7;2367:31;;;;;;;;;;;;2360:38;;2263:142;;;:::o;3048:127::-;3112:15;3146:17;:22;3164:3;3146:22;;;;;;;;;;;;3139:29;;3048:127;;;:::o;1132:312::-;1243:5;;;;;;;;;;;1229:19;;:10;:19;;;1221:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1322:7;1282:22;:37;1305:13;1282:37;;;;;;;;;;;:47;;;;1373:13;1339:22;:31;1362:7;1339:31;;;;;;;;;;;:47;;;;1401:36;1414:13;1429:7;1401:36;;;;;;;;;;;;;;;;;;;;;;;;1132:312;;:::o;704:156::-;798:5;;;;;;;;;;;784:19;;:10;:19;;;776:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;845:8;837:5;;:16;;;;;;;;;;;;;;;;;;704:156;:::o",
+  "source": "pragma solidity ^0.5.0;\n\n/*\n * @title Price/numberic Pull Oracle mapping contract\n*/\n\ncontract OracleIDDescriptions {\n\n    /*Variables*/\n    mapping(uint=>bytes32) tellorIDtoBytesID;\n    mapping(bytes32 => uint) bytesIDtoTellorID;\n    mapping(uint => int) tellorCodeToStatusCode;\n    mapping(int => uint) statusCodeToTellorCode;\n    address public owner;\n\n    /*Events*/\n    event TellorIdMappedToBytes(uint _requestID, bytes32 _id);\n    event StatusMapped(uint _tellorStatus, int _status);\n    \n\n    /*Functions*/\n    constructor() public{\n        owner =msg.sender;\n    }\n\n    /**\n    * @dev This fucntion allows for ownership transfer\n    * @param newOwner is the address for the new owner\n    */\n    function transferOwnership(address payable newOwner) external {\n        require(msg.sender == owner, \"Sender is not owner\");\n        owner = newOwner;\n    }\n\n    /**\n    * @dev This fuction allows the owner to map the tellor uint data status code to the standarized \n    * ADO int status code such as null, retreived etc...\n    * _tellorStatus uint the tellor status\n    * _status the data ADO standarized int status\n    */\n    function defineTellorCodeToStatusCode(uint _tellorStatus, int _status) external{\n        require(msg.sender == owner, \"Sender is not owner\");\n        tellorCodeToStatusCode[_tellorStatus] = _status;\n        statusCodeToTellorCode[_status] = _tellorStatus;\n        emit StatusMapped(_tellorStatus, _status);\n    }\n\n    /**\n    * @dev Allows owner to map the standarized bytes32 Id to a specific requestID from Tellor\n    * The dev should ensure the _requestId exists otherwise request the data on Tellor to get a requestId\n    * _requestID is the existing Tellor RequestID \n    * _id is the descption of the ID in bytes \n    */ \n    function defineTellorIdToBytesID(uint _requestID, bytes32 _id) external{\n        require(msg.sender == owner, \"Sender is not owner\");\n        tellorIDtoBytesID[_requestID] = _id;\n        bytesIDtoTellorID[_id] = _requestID;\n        emit TellorIdMappedToBytes(_requestID,_id);\n    }\n\n    /**\n    * @dev Getter function for the uint Tellor status code from the specified int ADO standarized status code\n    * @param _status the int ADO standarized status\n    * @return _tellorStatus uint \n    */ \n    function getTellorStatusFromStatus(int _status) public view returns(uint _tellorStatus){\n        return statusCodeToTellorCode[_status];\n    }\n\n    /**\n    * @dev Getter function of the int ADO standarized status code from the specified Tellor uint status\n    * @param _tellorStatus uint \n    * @return _status the int ADO standarized status\n    */ \n    function getStatusFromTellorStatus (uint _tellorStatus) public view returns(int _status) {\n        return tellorCodeToStatusCode[_tellorStatus];\n    }\n    \n    /**\n    * @dev Getter function of the Tellor RequestID based on the specified bytes32 ADO standaraized _id\n    * @param _id is the bytes32 descriptor mapped to an existing Tellor's requestId\n    * @return _requestId is Tellor's requestID corresnpoding to _id\n    */ \n    function getTellorIdFromBytes(bytes32 _id) public view  returns(uint _requestId)  {\n       return bytesIDtoTellorID[_id];\n    }\n\n    /**\n    * @dev Getter function of the bytes32 ADO standaraized _id based on the specified Tellor RequestID \n    * @param _requestId is Tellor's requestID\n    * @return _id is the bytes32 descriptor mapped to an existing Tellor's requestId\n    */ \n    function getBytesFromTellorID(uint _requestId) public view returns(bytes32 _id) {\n        return tellorIDtoBytesID[_requestId];\n    }\n\n}",
+  "sourcePath": "C:\\Users\\Frenchy\\Documents\\tellor\\firstTest\\Tellor_first_test\\contracts\\OracleIDDescriptions.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/OracleIDDescriptions.sol",
+    "exportedSymbols": {
+      "OracleIDDescriptions": [
+        810
+      ]
+    },
+    "id": 811,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 638,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 810,
+        "linearizedBaseContracts": [
+          810
+        ],
+        "name": "OracleIDDescriptions",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 642,
+            "name": "tellorIDtoBytesID",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "141:40:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+              "typeString": "mapping(uint256 => bytes32)"
+            },
+            "typeName": {
+              "id": 641,
+              "keyType": {
+                "id": 639,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "149:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "141:22:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                "typeString": "mapping(uint256 => bytes32)"
+              },
+              "valueType": {
+                "id": 640,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "155:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 646,
+            "name": "bytesIDtoTellorID",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "187:42:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+              "typeString": "mapping(bytes32 => uint256)"
+            },
+            "typeName": {
+              "id": 645,
+              "keyType": {
+                "id": 643,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "195:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "187:24:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                "typeString": "mapping(bytes32 => uint256)"
+              },
+              "valueType": {
+                "id": 644,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "206:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 650,
+            "name": "tellorCodeToStatusCode",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "235:43:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_int256_$",
+              "typeString": "mapping(uint256 => int256)"
+            },
+            "typeName": {
+              "id": 649,
+              "keyType": {
+                "id": 647,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "243:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "235:20:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_int256_$",
+                "typeString": "mapping(uint256 => int256)"
+              },
+              "valueType": {
+                "id": 648,
+                "name": "int",
+                "nodeType": "ElementaryTypeName",
+                "src": "251:3:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 654,
+            "name": "statusCodeToTellorCode",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "284:43:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_int256_$_t_uint256_$",
+              "typeString": "mapping(int256 => uint256)"
+            },
+            "typeName": {
+              "id": 653,
+              "keyType": {
+                "id": 651,
+                "name": "int",
+                "nodeType": "ElementaryTypeName",
+                "src": "292:3:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "284:20:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_int256_$_t_uint256_$",
+                "typeString": "mapping(int256 => uint256)"
+              },
+              "valueType": {
+                "id": 652,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "299:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 656,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "333:20:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 655,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "333:7:2",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 662,
+            "name": "TellorIdMappedToBytes",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 661,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 658,
+                  "indexed": false,
+                  "name": "_requestID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 662,
+                  "src": "403:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 657,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "403:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 660,
+                  "indexed": false,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 662,
+                  "src": "420:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 659,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "420:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "402:30:2"
+            },
+            "src": "375:58:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 668,
+            "name": "StatusMapped",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 667,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 664,
+                  "indexed": false,
+                  "name": "_tellorStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 668,
+                  "src": "457:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 663,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "457:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 666,
+                  "indexed": false,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 668,
+                  "src": "477:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 665,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "477:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "456:33:2"
+            },
+            "src": "438:52:2"
+          },
+          {
+            "body": {
+              "id": 676,
+              "nodeType": "Block",
+              "src": "539:34:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 674,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 671,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 656,
+                      "src": "549:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 672,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4883,
+                        "src": "556:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 673,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "556:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "549:17:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 675,
+                  "nodeType": "ExpressionStatement",
+                  "src": "549:17:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 677,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 669,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "530:2:2"
+            },
+            "returnParameters": {
+              "id": 670,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "539:0:2"
+            },
+            "scope": 810,
+            "src": "519:54:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 694,
+              "nodeType": "Block",
+              "src": "766:94:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 686,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 683,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4883,
+                            "src": "784:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 684,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "784:10:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 685,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 656,
+                          "src": "798:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "784:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "53656e646572206973206e6f74206f776e6572",
+                        "id": 687,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "805:21:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        },
+                        "value": "Sender is not owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        }
+                      ],
+                      "id": 682,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4886,
+                        4887
+                      ],
+                      "referencedDeclaration": 4887,
+                      "src": "776:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 688,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "776:51:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 689,
+                  "nodeType": "ExpressionStatement",
+                  "src": "776:51:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 692,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 690,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 656,
+                      "src": "837:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 691,
+                      "name": "newOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 679,
+                      "src": "845:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "837:16:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 693,
+                  "nodeType": "ExpressionStatement",
+                  "src": "837:16:2"
+                }
+              ]
+            },
+            "documentation": "@dev This fucntion allows for ownership transfer\n@param newOwner is the address for the new owner",
+            "id": 695,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 680,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 679,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 695,
+                  "src": "731:24:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 678,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "731:15:2",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "730:26:2"
+            },
+            "returnParameters": {
+              "id": 681,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "766:0:2"
+            },
+            "scope": 810,
+            "src": "704:156:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 727,
+              "nodeType": "Block",
+              "src": "1211:233:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 706,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 703,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4883,
+                            "src": "1229:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 704,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1229:10:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 705,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 656,
+                          "src": "1243:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1229:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "53656e646572206973206e6f74206f776e6572",
+                        "id": 707,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1250:21:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        },
+                        "value": "Sender is not owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        }
+                      ],
+                      "id": 702,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4886,
+                        4887
+                      ],
+                      "referencedDeclaration": 4887,
+                      "src": "1221:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 708,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1221:51:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 709,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1221:51:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 714,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 710,
+                        "name": "tellorCodeToStatusCode",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 650,
+                        "src": "1282:22:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_int256_$",
+                          "typeString": "mapping(uint256 => int256)"
+                        }
+                      },
+                      "id": 712,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 711,
+                        "name": "_tellorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 697,
+                        "src": "1305:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1282:37:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 713,
+                      "name": "_status",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 699,
+                      "src": "1322:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "src": "1282:47:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "id": 715,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1282:47:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 720,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 716,
+                        "name": "statusCodeToTellorCode",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 654,
+                        "src": "1339:22:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_int256_$_t_uint256_$",
+                          "typeString": "mapping(int256 => uint256)"
+                        }
+                      },
+                      "id": 718,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 717,
+                        "name": "_status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 699,
+                        "src": "1362:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1339:31:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 719,
+                      "name": "_tellorStatus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 697,
+                      "src": "1373:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1339:47:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 721,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1339:47:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 723,
+                        "name": "_tellorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 697,
+                        "src": "1414:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 724,
+                        "name": "_status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 699,
+                        "src": "1429:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      ],
+                      "id": 722,
+                      "name": "StatusMapped",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 668,
+                      "src": "1401:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_int256_$returns$__$",
+                        "typeString": "function (uint256,int256)"
+                      }
+                    },
+                    "id": 725,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1401:36:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 726,
+                  "nodeType": "EmitStatement",
+                  "src": "1396:41:2"
+                }
+              ]
+            },
+            "documentation": "@dev This fuction allows the owner to map the tellor uint data status code to the standarized \nADO int status code such as null, retreived etc...\n_tellorStatus uint the tellor status\n_status the data ADO standarized int status",
+            "id": 728,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "defineTellorCodeToStatusCode",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 697,
+                  "name": "_tellorStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 728,
+                  "src": "1170:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 696,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1170:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 699,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 728,
+                  "src": "1190:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 698,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1190:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1169:33:2"
+            },
+            "returnParameters": {
+              "id": 701,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1211:0:2"
+            },
+            "scope": 810,
+            "src": "1132:312:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 760,
+              "nodeType": "Block",
+              "src": "1835:210:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 739,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 736,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4883,
+                            "src": "1853:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 737,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1853:10:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 738,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 656,
+                          "src": "1867:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1853:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "53656e646572206973206e6f74206f776e6572",
+                        "id": 740,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1874:21:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        },
+                        "value": "Sender is not owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        }
+                      ],
+                      "id": 735,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4886,
+                        4887
+                      ],
+                      "referencedDeclaration": 4887,
+                      "src": "1845:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 741,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1845:51:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 742,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1845:51:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 747,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 743,
+                        "name": "tellorIDtoBytesID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 642,
+                        "src": "1906:17:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                          "typeString": "mapping(uint256 => bytes32)"
+                        }
+                      },
+                      "id": 745,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 744,
+                        "name": "_requestID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 730,
+                        "src": "1924:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1906:29:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 746,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 732,
+                      "src": "1938:3:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1906:35:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 748,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1906:35:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 753,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 749,
+                        "name": "bytesIDtoTellorID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 646,
+                        "src": "1951:17:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                          "typeString": "mapping(bytes32 => uint256)"
+                        }
+                      },
+                      "id": 751,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 750,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 732,
+                        "src": "1969:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1951:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 752,
+                      "name": "_requestID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 730,
+                      "src": "1976:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1951:35:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 754,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1951:35:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 756,
+                        "name": "_requestID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 730,
+                        "src": "2023:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 757,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 732,
+                        "src": "2034:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 755,
+                      "name": "TellorIdMappedToBytes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 662,
+                      "src": "2001:21:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_bytes32_$returns$__$",
+                        "typeString": "function (uint256,bytes32)"
+                      }
+                    },
+                    "id": 758,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2001:37:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 759,
+                  "nodeType": "EmitStatement",
+                  "src": "1996:42:2"
+                }
+              ]
+            },
+            "documentation": "@dev Allows owner to map the standarized bytes32 Id to a specific requestID from Tellor\nThe dev should ensure the _requestId exists otherwise request the data on Tellor to get a requestId\n_requestID is the existing Tellor RequestID \n_id is the descption of the ID in bytes ",
+            "id": 761,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "defineTellorIdToBytesID",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 733,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 730,
+                  "name": "_requestID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "1797:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 729,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1797:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 732,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "1814:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 731,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1814:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1796:30:2"
+            },
+            "returnParameters": {
+              "id": 734,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1835:0:2"
+            },
+            "scope": 810,
+            "src": "1764:281:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 772,
+              "nodeType": "Block",
+              "src": "2350:55:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 768,
+                      "name": "statusCodeToTellorCode",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 654,
+                      "src": "2367:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_int256_$_t_uint256_$",
+                        "typeString": "mapping(int256 => uint256)"
+                      }
+                    },
+                    "id": 770,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 769,
+                      "name": "_status",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 763,
+                      "src": "2390:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2367:31:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 767,
+                  "id": 771,
+                  "nodeType": "Return",
+                  "src": "2360:38:2"
+                }
+              ]
+            },
+            "documentation": "@dev Getter function for the uint Tellor status code from the specified int ADO standarized status code\n@param _status the int ADO standarized status\n@return _tellorStatus uint ",
+            "id": 773,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTellorStatusFromStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 764,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 763,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 773,
+                  "src": "2298:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 762,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2298:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2297:13:2"
+            },
+            "returnParameters": {
+              "id": 767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 766,
+                  "name": "_tellorStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 773,
+                  "src": "2331:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 765,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2331:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2330:20:2"
+            },
+            "scope": 810,
+            "src": "2263:142:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 784,
+              "nodeType": "Block",
+              "src": "2706:61:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 780,
+                      "name": "tellorCodeToStatusCode",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 650,
+                      "src": "2723:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_int256_$",
+                        "typeString": "mapping(uint256 => int256)"
+                      }
+                    },
+                    "id": 782,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 781,
+                      "name": "_tellorStatus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 775,
+                      "src": "2746:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2723:37:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 779,
+                  "id": 783,
+                  "nodeType": "Return",
+                  "src": "2716:44:2"
+                }
+              ]
+            },
+            "documentation": "@dev Getter function of the int ADO standarized status code from the specified Tellor uint status\n@param _tellorStatus uint \n@return _status the int ADO standarized status",
+            "id": 785,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStatusFromTellorStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 776,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 775,
+                  "name": "_tellorStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 785,
+                  "src": "2653:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 774,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2653:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2652:20:2"
+            },
+            "returnParameters": {
+              "id": 779,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 778,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 785,
+                  "src": "2693:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 777,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2693:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2692:13:2"
+            },
+            "scope": 810,
+            "src": "2617:150:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 796,
+              "nodeType": "Block",
+              "src": "3130:45:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 792,
+                      "name": "bytesIDtoTellorID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 646,
+                      "src": "3146:17:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                        "typeString": "mapping(bytes32 => uint256)"
+                      }
+                    },
+                    "id": 794,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 793,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 787,
+                      "src": "3164:3:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "3146:22:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 791,
+                  "id": 795,
+                  "nodeType": "Return",
+                  "src": "3139:29:2"
+                }
+              ]
+            },
+            "documentation": "@dev Getter function of the Tellor RequestID based on the specified bytes32 ADO standaraized _id\n@param _id is the bytes32 descriptor mapped to an existing Tellor's requestId\n@return _requestId is Tellor's requestID corresnpoding to _id",
+            "id": 797,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTellorIdFromBytes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 788,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 787,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 797,
+                  "src": "3078:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 786,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3078:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3077:13:2"
+            },
+            "returnParameters": {
+              "id": 791,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 790,
+                  "name": "_requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 797,
+                  "src": "3112:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 789,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3112:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3111:17:2"
+            },
+            "scope": 810,
+            "src": "3048:127:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 808,
+              "nodeType": "Block",
+              "src": "3512:53:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 804,
+                      "name": "tellorIDtoBytesID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 642,
+                      "src": "3529:17:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                        "typeString": "mapping(uint256 => bytes32)"
+                      }
+                    },
+                    "id": 806,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 805,
+                      "name": "_requestId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 799,
+                      "src": "3547:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "3529:29:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 803,
+                  "id": 807,
+                  "nodeType": "Return",
+                  "src": "3522:36:2"
+                }
+              ]
+            },
+            "documentation": "@dev Getter function of the bytes32 ADO standaraized _id based on the specified Tellor RequestID \n@param _requestId is Tellor's requestID\n@return _id is the bytes32 descriptor mapped to an existing Tellor's requestId",
+            "id": 809,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBytesFromTellorID",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 800,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 799,
+                  "name": "_requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 809,
+                  "src": "3462:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 798,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3462:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3461:17:2"
+            },
+            "returnParameters": {
+              "id": 803,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 802,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 809,
+                  "src": "3499:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 801,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3499:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3498:13:2"
+            },
+            "scope": 810,
+            "src": "3432:133:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 811,
+        "src": "86:3482:2"
+      }
+    ],
+    "src": "0:3568:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/OracleIDDescriptions.sol",
+    "exportedSymbols": {
+      "OracleIDDescriptions": [
+        810
+      ]
+    },
+    "id": 811,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 638,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 810,
+        "linearizedBaseContracts": [
+          810
+        ],
+        "name": "OracleIDDescriptions",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 642,
+            "name": "tellorIDtoBytesID",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "141:40:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+              "typeString": "mapping(uint256 => bytes32)"
+            },
+            "typeName": {
+              "id": 641,
+              "keyType": {
+                "id": 639,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "149:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "141:22:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                "typeString": "mapping(uint256 => bytes32)"
+              },
+              "valueType": {
+                "id": 640,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "155:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 646,
+            "name": "bytesIDtoTellorID",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "187:42:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+              "typeString": "mapping(bytes32 => uint256)"
+            },
+            "typeName": {
+              "id": 645,
+              "keyType": {
+                "id": 643,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "195:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "187:24:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                "typeString": "mapping(bytes32 => uint256)"
+              },
+              "valueType": {
+                "id": 644,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "206:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 650,
+            "name": "tellorCodeToStatusCode",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "235:43:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_int256_$",
+              "typeString": "mapping(uint256 => int256)"
+            },
+            "typeName": {
+              "id": 649,
+              "keyType": {
+                "id": 647,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "243:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "235:20:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_int256_$",
+                "typeString": "mapping(uint256 => int256)"
+              },
+              "valueType": {
+                "id": 648,
+                "name": "int",
+                "nodeType": "ElementaryTypeName",
+                "src": "251:3:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 654,
+            "name": "statusCodeToTellorCode",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "284:43:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_int256_$_t_uint256_$",
+              "typeString": "mapping(int256 => uint256)"
+            },
+            "typeName": {
+              "id": 653,
+              "keyType": {
+                "id": 651,
+                "name": "int",
+                "nodeType": "ElementaryTypeName",
+                "src": "292:3:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "284:20:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_int256_$_t_uint256_$",
+                "typeString": "mapping(int256 => uint256)"
+              },
+              "valueType": {
+                "id": 652,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "299:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 656,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 810,
+            "src": "333:20:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 655,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "333:7:2",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 662,
+            "name": "TellorIdMappedToBytes",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 661,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 658,
+                  "indexed": false,
+                  "name": "_requestID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 662,
+                  "src": "403:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 657,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "403:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 660,
+                  "indexed": false,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 662,
+                  "src": "420:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 659,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "420:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "402:30:2"
+            },
+            "src": "375:58:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 668,
+            "name": "StatusMapped",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 667,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 664,
+                  "indexed": false,
+                  "name": "_tellorStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 668,
+                  "src": "457:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 663,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "457:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 666,
+                  "indexed": false,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 668,
+                  "src": "477:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 665,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "477:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "456:33:2"
+            },
+            "src": "438:52:2"
+          },
+          {
+            "body": {
+              "id": 676,
+              "nodeType": "Block",
+              "src": "539:34:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 674,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 671,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 656,
+                      "src": "549:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 672,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4883,
+                        "src": "556:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 673,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "556:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "549:17:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 675,
+                  "nodeType": "ExpressionStatement",
+                  "src": "549:17:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 677,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 669,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "530:2:2"
+            },
+            "returnParameters": {
+              "id": 670,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "539:0:2"
+            },
+            "scope": 810,
+            "src": "519:54:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 694,
+              "nodeType": "Block",
+              "src": "766:94:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 686,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 683,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4883,
+                            "src": "784:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 684,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "784:10:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 685,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 656,
+                          "src": "798:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "784:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "53656e646572206973206e6f74206f776e6572",
+                        "id": 687,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "805:21:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        },
+                        "value": "Sender is not owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        }
+                      ],
+                      "id": 682,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4886,
+                        4887
+                      ],
+                      "referencedDeclaration": 4887,
+                      "src": "776:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 688,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "776:51:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 689,
+                  "nodeType": "ExpressionStatement",
+                  "src": "776:51:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 692,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 690,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 656,
+                      "src": "837:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 691,
+                      "name": "newOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 679,
+                      "src": "845:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "837:16:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 693,
+                  "nodeType": "ExpressionStatement",
+                  "src": "837:16:2"
+                }
+              ]
+            },
+            "documentation": "@dev This fucntion allows for ownership transfer\n@param newOwner is the address for the new owner",
+            "id": 695,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 680,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 679,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 695,
+                  "src": "731:24:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 678,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "731:15:2",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "730:26:2"
+            },
+            "returnParameters": {
+              "id": 681,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "766:0:2"
+            },
+            "scope": 810,
+            "src": "704:156:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 727,
+              "nodeType": "Block",
+              "src": "1211:233:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 706,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 703,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4883,
+                            "src": "1229:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 704,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1229:10:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 705,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 656,
+                          "src": "1243:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1229:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "53656e646572206973206e6f74206f776e6572",
+                        "id": 707,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1250:21:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        },
+                        "value": "Sender is not owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        }
+                      ],
+                      "id": 702,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4886,
+                        4887
+                      ],
+                      "referencedDeclaration": 4887,
+                      "src": "1221:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 708,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1221:51:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 709,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1221:51:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 714,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 710,
+                        "name": "tellorCodeToStatusCode",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 650,
+                        "src": "1282:22:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_int256_$",
+                          "typeString": "mapping(uint256 => int256)"
+                        }
+                      },
+                      "id": 712,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 711,
+                        "name": "_tellorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 697,
+                        "src": "1305:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1282:37:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 713,
+                      "name": "_status",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 699,
+                      "src": "1322:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "src": "1282:47:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "id": 715,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1282:47:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 720,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 716,
+                        "name": "statusCodeToTellorCode",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 654,
+                        "src": "1339:22:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_int256_$_t_uint256_$",
+                          "typeString": "mapping(int256 => uint256)"
+                        }
+                      },
+                      "id": 718,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 717,
+                        "name": "_status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 699,
+                        "src": "1362:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1339:31:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 719,
+                      "name": "_tellorStatus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 697,
+                      "src": "1373:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1339:47:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 721,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1339:47:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 723,
+                        "name": "_tellorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 697,
+                        "src": "1414:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 724,
+                        "name": "_status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 699,
+                        "src": "1429:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      ],
+                      "id": 722,
+                      "name": "StatusMapped",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 668,
+                      "src": "1401:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_int256_$returns$__$",
+                        "typeString": "function (uint256,int256)"
+                      }
+                    },
+                    "id": 725,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1401:36:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 726,
+                  "nodeType": "EmitStatement",
+                  "src": "1396:41:2"
+                }
+              ]
+            },
+            "documentation": "@dev This fuction allows the owner to map the tellor uint data status code to the standarized \nADO int status code such as null, retreived etc...\n_tellorStatus uint the tellor status\n_status the data ADO standarized int status",
+            "id": 728,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "defineTellorCodeToStatusCode",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 697,
+                  "name": "_tellorStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 728,
+                  "src": "1170:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 696,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1170:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 699,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 728,
+                  "src": "1190:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 698,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1190:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1169:33:2"
+            },
+            "returnParameters": {
+              "id": 701,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1211:0:2"
+            },
+            "scope": 810,
+            "src": "1132:312:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 760,
+              "nodeType": "Block",
+              "src": "1835:210:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 739,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 736,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4883,
+                            "src": "1853:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 737,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1853:10:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 738,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 656,
+                          "src": "1867:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1853:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "53656e646572206973206e6f74206f776e6572",
+                        "id": 740,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1874:21:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        },
+                        "value": "Sender is not owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c31e61005312bc4f751533ef9aaa8e9a41448b72bb628fe51500ef66060b25c4",
+                          "typeString": "literal_string \"Sender is not owner\""
+                        }
+                      ],
+                      "id": 735,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4886,
+                        4887
+                      ],
+                      "referencedDeclaration": 4887,
+                      "src": "1845:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 741,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1845:51:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 742,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1845:51:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 747,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 743,
+                        "name": "tellorIDtoBytesID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 642,
+                        "src": "1906:17:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                          "typeString": "mapping(uint256 => bytes32)"
+                        }
+                      },
+                      "id": 745,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 744,
+                        "name": "_requestID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 730,
+                        "src": "1924:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1906:29:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 746,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 732,
+                      "src": "1938:3:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1906:35:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 748,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1906:35:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 753,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 749,
+                        "name": "bytesIDtoTellorID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 646,
+                        "src": "1951:17:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                          "typeString": "mapping(bytes32 => uint256)"
+                        }
+                      },
+                      "id": 751,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 750,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 732,
+                        "src": "1969:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1951:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 752,
+                      "name": "_requestID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 730,
+                      "src": "1976:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1951:35:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 754,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1951:35:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 756,
+                        "name": "_requestID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 730,
+                        "src": "2023:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 757,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 732,
+                        "src": "2034:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 755,
+                      "name": "TellorIdMappedToBytes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 662,
+                      "src": "2001:21:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_bytes32_$returns$__$",
+                        "typeString": "function (uint256,bytes32)"
+                      }
+                    },
+                    "id": 758,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2001:37:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 759,
+                  "nodeType": "EmitStatement",
+                  "src": "1996:42:2"
+                }
+              ]
+            },
+            "documentation": "@dev Allows owner to map the standarized bytes32 Id to a specific requestID from Tellor\nThe dev should ensure the _requestId exists otherwise request the data on Tellor to get a requestId\n_requestID is the existing Tellor RequestID \n_id is the descption of the ID in bytes ",
+            "id": 761,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "defineTellorIdToBytesID",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 733,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 730,
+                  "name": "_requestID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "1797:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 729,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1797:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 732,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "1814:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 731,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1814:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1796:30:2"
+            },
+            "returnParameters": {
+              "id": 734,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1835:0:2"
+            },
+            "scope": 810,
+            "src": "1764:281:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 772,
+              "nodeType": "Block",
+              "src": "2350:55:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 768,
+                      "name": "statusCodeToTellorCode",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 654,
+                      "src": "2367:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_int256_$_t_uint256_$",
+                        "typeString": "mapping(int256 => uint256)"
+                      }
+                    },
+                    "id": 770,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 769,
+                      "name": "_status",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 763,
+                      "src": "2390:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2367:31:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 767,
+                  "id": 771,
+                  "nodeType": "Return",
+                  "src": "2360:38:2"
+                }
+              ]
+            },
+            "documentation": "@dev Getter function for the uint Tellor status code from the specified int ADO standarized status code\n@param _status the int ADO standarized status\n@return _tellorStatus uint ",
+            "id": 773,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTellorStatusFromStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 764,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 763,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 773,
+                  "src": "2298:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 762,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2298:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2297:13:2"
+            },
+            "returnParameters": {
+              "id": 767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 766,
+                  "name": "_tellorStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 773,
+                  "src": "2331:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 765,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2331:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2330:20:2"
+            },
+            "scope": 810,
+            "src": "2263:142:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 784,
+              "nodeType": "Block",
+              "src": "2706:61:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 780,
+                      "name": "tellorCodeToStatusCode",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 650,
+                      "src": "2723:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_int256_$",
+                        "typeString": "mapping(uint256 => int256)"
+                      }
+                    },
+                    "id": 782,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 781,
+                      "name": "_tellorStatus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 775,
+                      "src": "2746:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2723:37:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 779,
+                  "id": 783,
+                  "nodeType": "Return",
+                  "src": "2716:44:2"
+                }
+              ]
+            },
+            "documentation": "@dev Getter function of the int ADO standarized status code from the specified Tellor uint status\n@param _tellorStatus uint \n@return _status the int ADO standarized status",
+            "id": 785,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStatusFromTellorStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 776,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 775,
+                  "name": "_tellorStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 785,
+                  "src": "2653:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 774,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2653:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2652:20:2"
+            },
+            "returnParameters": {
+              "id": 779,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 778,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 785,
+                  "src": "2693:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 777,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2693:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2692:13:2"
+            },
+            "scope": 810,
+            "src": "2617:150:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 796,
+              "nodeType": "Block",
+              "src": "3130:45:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 792,
+                      "name": "bytesIDtoTellorID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 646,
+                      "src": "3146:17:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                        "typeString": "mapping(bytes32 => uint256)"
+                      }
+                    },
+                    "id": 794,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 793,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 787,
+                      "src": "3164:3:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "3146:22:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 791,
+                  "id": 795,
+                  "nodeType": "Return",
+                  "src": "3139:29:2"
+                }
+              ]
+            },
+            "documentation": "@dev Getter function of the Tellor RequestID based on the specified bytes32 ADO standaraized _id\n@param _id is the bytes32 descriptor mapped to an existing Tellor's requestId\n@return _requestId is Tellor's requestID corresnpoding to _id",
+            "id": 797,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTellorIdFromBytes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 788,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 787,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 797,
+                  "src": "3078:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 786,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3078:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3077:13:2"
+            },
+            "returnParameters": {
+              "id": 791,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 790,
+                  "name": "_requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 797,
+                  "src": "3112:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 789,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3112:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3111:17:2"
+            },
+            "scope": 810,
+            "src": "3048:127:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 808,
+              "nodeType": "Block",
+              "src": "3512:53:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 804,
+                      "name": "tellorIDtoBytesID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 642,
+                      "src": "3529:17:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                        "typeString": "mapping(uint256 => bytes32)"
+                      }
+                    },
+                    "id": 806,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 805,
+                      "name": "_requestId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 799,
+                      "src": "3547:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "3529:29:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 803,
+                  "id": 807,
+                  "nodeType": "Return",
+                  "src": "3522:36:2"
+                }
+              ]
+            },
+            "documentation": "@dev Getter function of the bytes32 ADO standaraized _id based on the specified Tellor RequestID \n@param _requestId is Tellor's requestID\n@return _id is the bytes32 descriptor mapped to an existing Tellor's requestId",
+            "id": 809,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBytesFromTellorID",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 800,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 799,
+                  "name": "_requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 809,
+                  "src": "3462:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 798,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3462:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3461:17:2"
+            },
+            "returnParameters": {
+              "id": 803,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 802,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 809,
+                  "src": "3499:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 801,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3499:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3498:13:2"
+            },
+            "scope": 810,
+            "src": "3432:133:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 811,
+        "src": "86:3482:2"
+      }
+    ],
+    "src": "0:3568:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-02-20T22:47:02.790Z",
+  "devdoc": {
+    "methods": {
+      "defineTellorCodeToStatusCode(uint256,int256)": {
+        "details": "This fuction allows the owner to map the tellor uint data status code to the standarized  ADO int status code such as null, retreived etc... _tellorStatus uint the tellor status _status the data ADO standarized int status"
+      },
+      "defineTellorIdToBytesID(uint256,bytes32)": {
+        "details": "Allows owner to map the standarized bytes32 Id to a specific requestID from Tellor The dev should ensure the _requestId exists otherwise request the data on Tellor to get a requestId _requestID is the existing Tellor RequestID  _id is the descption of the ID in bytes "
+      },
+      "getBytesFromTellorID(uint256)": {
+        "details": "Getter function of the bytes32 ADO standaraized _id based on the specified Tellor RequestID ",
+        "params": {
+          "_requestId": "is Tellor's requestID"
+        },
+        "return": "_id is the bytes32 descriptor mapped to an existing Tellor's requestId"
+      },
+      "getStatusFromTellorStatus(uint256)": {
+        "details": "Getter function of the int ADO standarized status code from the specified Tellor uint status",
+        "params": {
+          "_tellorStatus": "uint "
+        },
+        "return": "_status the int ADO standarized status"
+      },
+      "getTellorIdFromBytes(bytes32)": {
+        "details": "Getter function of the Tellor RequestID based on the specified bytes32 ADO standaraized _id",
+        "params": {
+          "_id": "is the bytes32 descriptor mapped to an existing Tellor's requestId"
+        },
+        "return": "_requestId is Tellor's requestID corresnpoding to _id"
+      },
+      "getTellorStatusFromStatus(int256)": {
+        "details": "Getter function for the uint Tellor status code from the specified int ADO standarized status code",
+        "params": {
+          "_status": "the int ADO standarized status"
+        },
+        "return": "_tellorStatus uint "
+      },
+      "transferOwnership(address)": {
+        "details": "This fucntion allows for ownership transfer",
+        "params": {
+          "newOwner": "is the address for the new owner"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

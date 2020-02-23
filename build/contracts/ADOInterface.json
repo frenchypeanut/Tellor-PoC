@@ -1,0 +1,404 @@
+{
+  "contractName": "ADOInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "Id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "resultFor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int256",
+          "name": "outcome",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "status",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"Id\",\"type\":\"bytes32\"}],\"name\":\"resultFor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"outcome\",\"type\":\"int256\"},{\"internalType\":\"int256\",\"name\":\"status\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/interfaces/ADOInterface.sol\":\"ADOInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/interfaces/ADOInterface.sol\":{\"keccak256\":\"0xcf2058e8e9b4a8f01f7ec06f6c5483bbae3799a60c3c99a157f2c0a25187895d\",\"urls\":[\"bzz-raw://420c5025430cb45ca70ca60e95cf7befee6f136f70e7e768cdb7042fd306157e\",\"dweb:/ipfs/QmcDdGGw3ZHpwyNpQAKdWHHsZyBiH3HqNT4mZSHcUtr1xM\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\n\n/*\n@title ADOInterface \n@notice This inteface is the standard interface for price oracles\n*/\n\ninterface ADOInterface {\n\t\tfunction resultFor(bytes32 Id) view external returns (uint256 timestamp, int256 outcome, int256 status);\n}\n\n",
+  "sourcePath": "C:\\Users\\Frenchy\\Documents\\tellor\\firstTest\\Tellor_first_test\\contracts\\interfaces\\ADOInterface.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/interfaces/ADOInterface.sol",
+    "exportedSymbols": {
+      "ADOInterface": [
+        1666
+      ]
+    },
+    "id": 1667,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1654,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 1666,
+        "linearizedBaseContracts": [
+          1666
+        ],
+        "name": "ADOInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 1665,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "resultFor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1657,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1656,
+                  "name": "Id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1665,
+                  "src": "165:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1655,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "165:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "164:12:6"
+            },
+            "returnParameters": {
+              "id": 1664,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1659,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1665,
+                  "src": "200:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1658,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "200:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1661,
+                  "name": "outcome",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1665,
+                  "src": "219:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1660,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "219:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1663,
+                  "name": "status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1665,
+                  "src": "235:13:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1662,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "199:50:6"
+            },
+            "scope": 1666,
+            "src": "146:104:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1667,
+        "src": "119:133:6"
+      }
+    ],
+    "src": "0:254:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/interfaces/ADOInterface.sol",
+    "exportedSymbols": {
+      "ADOInterface": [
+        1666
+      ]
+    },
+    "id": 1667,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1654,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 1666,
+        "linearizedBaseContracts": [
+          1666
+        ],
+        "name": "ADOInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 1665,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "resultFor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1657,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1656,
+                  "name": "Id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1665,
+                  "src": "165:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1655,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "165:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "164:12:6"
+            },
+            "returnParameters": {
+              "id": 1664,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1659,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1665,
+                  "src": "200:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1658,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "200:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1661,
+                  "name": "outcome",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1665,
+                  "src": "219:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1660,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "219:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1663,
+                  "name": "status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1665,
+                  "src": "235:13:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 1662,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "199:50:6"
+            },
+            "scope": 1666,
+            "src": "146:104:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1667,
+        "src": "119:133:6"
+      }
+    ],
+    "src": "0:254:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-02-20T22:47:02.806Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

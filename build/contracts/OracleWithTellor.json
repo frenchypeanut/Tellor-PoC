@@ -1,0 +1,861 @@
+{
+  "contractName": "OracleWithTellor",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tip",
+          "type": "uint256"
+        }
+      ],
+      "name": "addTip",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        }
+      ],
+      "name": "addTipWithEther",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "getAnyDataAfter",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "_ifRetrieve",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_timestampRetrieved",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getCurrentValue",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "ifRetrieve",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_timestampRetrieved",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_requestId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFirstVerifiedDataAfter",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_timestampRetrieved",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_request",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_symbol",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_granularity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tip",
+          "type": "uint256"
+        }
+      ],
+      "name": "requestData",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_request",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_symbol",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_granularity",
+          "type": "uint256"
+        }
+      ],
+      "name": "requestDataWithEther",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_bytesId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "resultFor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int256",
+          "name": "outcome",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "status",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userContract",
+          "type": "address"
+        }
+      ],
+      "name": "setUserContract",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "test",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_previousOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_tip\",\"type\":\"uint256\"}],\"name\":\"addTip\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"}],\"name\":\"addTipWithEther\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timestamp\",\"type\":\"uint256\"}],\"name\":\"getAnyDataAfter\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_ifRetrieve\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timestampRetrieved\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"}],\"name\":\"getCurrentValue\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"ifRetrieve\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timestampRetrieved\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timestamp\",\"type\":\"uint256\"}],\"name\":\"getFirstVerifiedDataAfter\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timestampRetrieved\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_request\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_symbol\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_granularity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_tip\",\"type\":\"uint256\"}],\"name\":\"requestData\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_request\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_symbol\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_granularity\",\"type\":\"uint256\"}],\"name\":\"requestDataWithEther\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_bytesId\",\"type\":\"bytes32\"}],\"name\":\"resultFor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"outcome\",\"type\":\"int256\"},{\"internalType\":\"int256\",\"name\":\"status\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userContract\",\"type\":\"address\"}],\"name\":\"setUserContract\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"test\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"addTip(uint256,uint256)\":{\"details\":\"Allows the user to tip miners for the specified request using Tributes\",\"params\":{\"_requestId\":\"to tip\",\"_tip\":\"amount\"}},\"addTipWithEther(uint256)\":{\"details\":\"Allows user to add tip with Ether by sending the ETH to the userContract and exchanging it for Tributes at the price specified by the userContract owner.\",\"params\":{\"_requestId\":\"to tip\"}},\"getAnyDataAfter(uint256,uint256)\":{\"details\":\"Allows the user to get the first value for the requestId after the specified timestamp\",\"params\":{\"_requestId\":\"is the requestId to look up the value for\",\"_timestamp\":\"after which to search for first verified value\"},\"return\":\"bool true if it is able to retreive a value, the value, and the value's timestamp\"},\"getCurrentValue(uint256)\":{\"details\":\"Allows the user to get the latest value for the requestId specified\",\"params\":{\"_requestId\":\"is the requestId to look up the value for\"},\"return\":\"bool true if it is able to retreive a value, the value, and the value's timestamp\"},\"getFirstVerifiedDataAfter(uint256,uint256)\":{\"details\":\"Allows the user to get the first verified value for the requestId after the specified timestamp\",\"params\":{\"_requestId\":\"is the requestId to look up the value for\",\"_timestamp\":\"after which to search for first verified value\"},\"return\":\"bool true if it is able to retreive a value, the value, and the value's timestamp, the timestamp after which it searched for the first verified value\"},\"requestData(string,string,uint256,uint256)\":{\"details\":\"Allows the user to submit a request for data to the oracle using Tributes Allowing this prevents us from increasing spread too high (since if we set the price too hight users will just go to an exchange and get tokens from there)\",\"params\":{\"_granularity\":\"is the number of decimals miners should include on the submitted value\",\"_request\":\"string API being requested to be mined\",\"_symbol\":\"is the short string symbol for the api request\",\"_tip\":\"amount the requester is willing to pay to be get on queue. Miners mine the onDeckQueryHash, or the api with the highest payout pool\"}},\"requestDataWithEther(string,string,uint256)\":{\"details\":\"Allows the user to submit a request for data to the oracle using ETH\",\"params\":{\"_granularity\":\"is the number of decimals miners should include on the submitted value\",\"_request\":\"string API being requested to be mined\",\"_symbol\":\"is the short string symbol for the api request\"}},\"resultFor(bytes32)\":{\"details\":\"Allows the user to get the latest value for the requestId specified using the  ADO specification for the standard inteface for price oracles\",\"params\":{\"_bytesId\":\"is the ADO standarized bytes32 price/key value pair identifier\"},\"return\":\"the timestamp, outcome or value/ and the status code (for retreived, null, etc...)\"},\"setUserContract(address)\":{\"details\":\"allows owner to set the user contract address\",\"params\":{\"_userContract\":\"address\"}},\"transferOwnership(address)\":{\"details\":\"allows owner to transfer ownership\",\"params\":{\"_newOwner\":\"address\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/OracleWithTellor.sol\":\"OracleWithTellor\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/OracleIDDescriptions.sol\":{\"keccak256\":\"0x75dd9f9d70302117fd80800c5dc84fca0a31b92fd92f7e5598b99d09d25bbb7d\",\"urls\":[\"bzz-raw://9a6547b017d857fe00b3ae54e34d2cc621e8abeabbeb941ae4767726e0186bd1\",\"dweb:/ipfs/QmWTgnpMktKLAeMS3jKDUDYNT2DrMg5CyeX7ELRK1yPbFa\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/OracleWithTellor.sol\":{\"keccak256\":\"0x65c547c534b66c17b37ffd16202a97b0acc9ba4dbf3c68938a7d5185ff2e2048\",\"urls\":[\"bzz-raw://d138e88130e4e5a07b2cd1cc143a07885d3d3565d1b46a6f947cfd09eba9a0be\",\"dweb:/ipfs/QmRQLXPdRvBegL1AiFb1C5zV9VrGK8iTeGpHveqoLmnM2U\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/UserContract.sol\":{\"keccak256\":\"0x9e282e223f09debe50676c8380ac1e3eaf899d0496780a8f6a5ae526285ad757\",\"urls\":[\"bzz-raw://beb48e032b45037d6f47821eb1c144b8dbeac86269b9df1c3269340a93d2eb87\",\"dweb:/ipfs/QmV5SP7DeV5VahwVtFid2JzBak5h1FKWjwRyQzRedeyVhr\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/UsingTellor.sol\":{\"keccak256\":\"0x18392c438cee36addcdda91feed4d5bedfc32f6feb171346409cd85d0cc97ef1\",\"urls\":[\"bzz-raw://bf034a6880b1eb2a4a95313016e50937bcb0afb434095a9d5de904d9d9ce6d1a\",\"dweb:/ipfs/QmcAPnHD2WfFYMeaXwvzMMKhdAx36SeyPJ2NJ2Vc3tTBR2\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/interfaces/ADOInterface.sol\":{\"keccak256\":\"0xcf2058e8e9b4a8f01f7ec06f6c5483bbae3799a60c3c99a157f2c0a25187895d\",\"urls\":[\"bzz-raw://420c5025430cb45ca70ca60e95cf7befee6f136f70e7e768cdb7042fd306157e\",\"dweb:/ipfs/QmcDdGGw3ZHpwyNpQAKdWHHsZyBiH3HqNT4mZSHcUtr1xM\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/libraries/SafeMath.sol\":{\"keccak256\":\"0x835569f11965799f14a74288c6b76a8f6723c0b4bc45ba767e5ad060e71d704f\",\"urls\":[\"bzz-raw://f5e35cc92a4ba050ca58136d229b4182f4a10cf5385a9d6c2915ac98c86100f9\",\"dweb:/ipfs/QmdYoonWK5ChR7iQwXmb4838WyCEpSuy7indxqMdWWvaQd\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/libraries/TellorGettersLibrary.sol\":{\"keccak256\":\"0xd7ba7aeb64a7eb89c3d02be1b4a11e9815d491cac3b71c669cb7c537ca5ba5d1\",\"urls\":[\"bzz-raw://9c663c948a8a527ca8699951d69925eb1fb67bed2084083b5a2852b8c0c490a2\",\"dweb:/ipfs/QmRQDLLUba4RKQJbZtr8pWLcHioWYtaNUecEBFbiygM48J\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/libraries/TellorLibrary.sol\":{\"keccak256\":\"0x6542cd93b5412ed864fced079bf3a9c3321a283ed291e047c3fc0e5f90b30a1e\",\"urls\":[\"bzz-raw://88fe1735d4f5dc75ed86a943e9d15a0698ce4ecb127a56e3b0d0c64b5d13d485\",\"dweb:/ipfs/QmPAqSsoAkEVxchiHyeqJWP5mKediowSDikQf4vnJ3VCka\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/libraries/TellorStorage.sol\":{\"keccak256\":\"0x15634e54d282ec350c3a9e0c6f7bfeb73121d7fbe6c1ed03ca594f984af87925\",\"urls\":[\"bzz-raw://10dfcb013ba31da2cd61b37fee8416f8b20fd015ab3692b09f4af36144225dc5\",\"dweb:/ipfs/QmZk2yuFJY8j4b2RGhYSKvaTmM5Y2BedaiFvqoi5Rkw3Jd\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/libraries/TellorTransfer.sol\":{\"keccak256\":\"0x3b0033957aed6e8b43e01b2d203aab9e7868ba5c873c219dc80f3a3e55a3c212\",\"urls\":[\"bzz-raw://ac862dadd4c2478c5a2c6a5dc92d59b308981fd1b479ef9bf84356e6fa0ccf47\",\"dweb:/ipfs/QmTjwyYmJyXaodVwfsWDeaqFQJgAf1hakXq6RbnYB966vB\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/libraries/Utilities.sol\":{\"keccak256\":\"0xa4fddaeaf9246f07e7464bc7936ea47431316d96dc426e2daef9e4dab796bd4a\",\"urls\":[\"bzz-raw://cf4501bed73eba3f8ad6c27d6249c6626231174cb3132ffe7199a9583624853d\",\"dweb:/ipfs/QmSmUdiVZQS8pExqtXo6JZaGKeaMpN2YbpdwKK3YJ2PTkW\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/testContracts/Tellor.sol\":{\"keccak256\":\"0x093f2af8a4895fde683ea5194dab9b9f408c7de54b4b6960000994aba4544216\",\"urls\":[\"bzz-raw://2ffed0ba4acb050177dbe7b2b8ef09f5a81b60fab105e0ce931ebdd01b95849c\",\"dweb:/ipfs/QmNxbknQF2yGMVkAZ9DYkh2cHU2frVWf4udiUBRtG6xtwd\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/testContracts/TellorGetters.sol\":{\"keccak256\":\"0x8a56763f5095c975d6b9e059121932a0ea9ea0e2d0b5cc5f1b2646f4b1895120\",\"urls\":[\"bzz-raw://e4c101d7e2523f989b5bd301a2e9c70e03120d524b191fe2c57c461df5e6e3b1\",\"dweb:/ipfs/QmVb88FKNhkajBtkbfh6pr1eBpAw7PkwUfrxY5ZmXoGT4f\"]},\"/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/testContracts/TellorMaster.sol\":{\"keccak256\":\"0x9dc2a851f8369db9f09965dacfe18ba4c5d22fffc3bfade51f3c56e76c36a46c\",\"urls\":[\"bzz-raw://f7019783a10aa420a223b67380df8f059dd51d9fa231be318fcbbeb0273984e1\",\"dweb:/ipfs/QmcAJd2TPVXFJ8cnCbxi1W3FCoYAQz4pvfJWPqjDybLLdJ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.4.21 <0.7.0;\r\n\r\nimport \"./UsingTellor.sol\";\r\n\r\ncontract OracleWithTellor is UsingTellor{\r\n  address public owner;\r\n  uint public test;\r\n\r\n//   function setUsingTellorAddress(address contractAddress) public view {\r\n//         require(msg.sender == owner, \"Only the owner can update the Oracle contract address\");\r\n//         // If you are making a call to an untrusted external contract, avoid state changes after the call. \r\n//         // This pattern is also sometimes known as the checks-effects-interactions pattern.\r\n//         // youtubeViewsWatchdog = YoutubeViewsWatchdog(contractAddress);\r\n//         // youtubeViewsWatchdog = YoutubeViewsWatchdog(0x7A1EbC77039397269a1B791392FE8343951757cb);\r\n//   }\r\n\r\n  constructor() public {\r\n    owner = msg.sender;\r\n  }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Frenchy\\Documents\\tellor\\firstTest\\Tellor_first_test\\contracts\\OracleWithTellor.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/OracleWithTellor.sol",
+    "exportedSymbols": {
+      "OracleWithTellor": [
+        829
+      ]
+    },
+    "id": 830,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 812,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:3"
+      },
+      {
+        "absolutePath": "/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/UsingTellor.sol",
+        "file": "./UsingTellor.sol",
+        "id": 813,
+        "nodeType": "ImportDirective",
+        "scope": 830,
+        "sourceUnit": 1653,
+        "src": "36:27:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 814,
+              "name": "UsingTellor",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1652,
+              "src": "96:11:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UsingTellor_$1652",
+                "typeString": "contract UsingTellor"
+              }
+            },
+            "id": 815,
+            "nodeType": "InheritanceSpecifier",
+            "src": "96:11:3"
+          }
+        ],
+        "contractDependencies": [
+          1652,
+          1666
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 829,
+        "linearizedBaseContracts": [
+          829,
+          1652,
+          1666
+        ],
+        "name": "OracleWithTellor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 817,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 829,
+            "src": "112:20:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 816,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "112:7:3",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 819,
+            "name": "test",
+            "nodeType": "VariableDeclaration",
+            "scope": 829,
+            "src": "137:16:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 818,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "137:4:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 827,
+              "nodeType": "Block",
+              "src": "755:31:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 825,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 822,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 817,
+                      "src": "762:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 823,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4883,
+                        "src": "770:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 824,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "770:10:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "762:18:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 826,
+                  "nodeType": "ExpressionStatement",
+                  "src": "762:18:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 828,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 820,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "745:2:3"
+            },
+            "returnParameters": {
+              "id": 821,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "755:0:3"
+            },
+            "scope": 829,
+            "src": "734:52:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 830,
+        "src": "67:722:3"
+      }
+    ],
+    "src": "0:791:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/OracleWithTellor.sol",
+    "exportedSymbols": {
+      "OracleWithTellor": [
+        829
+      ]
+    },
+    "id": 830,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 812,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:3"
+      },
+      {
+        "absolutePath": "/C/Users/Frenchy/Documents/tellor/firstTest/Tellor_first_test/contracts/UsingTellor.sol",
+        "file": "./UsingTellor.sol",
+        "id": 813,
+        "nodeType": "ImportDirective",
+        "scope": 830,
+        "sourceUnit": 1653,
+        "src": "36:27:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 814,
+              "name": "UsingTellor",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1652,
+              "src": "96:11:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UsingTellor_$1652",
+                "typeString": "contract UsingTellor"
+              }
+            },
+            "id": 815,
+            "nodeType": "InheritanceSpecifier",
+            "src": "96:11:3"
+          }
+        ],
+        "contractDependencies": [
+          1652,
+          1666
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 829,
+        "linearizedBaseContracts": [
+          829,
+          1652,
+          1666
+        ],
+        "name": "OracleWithTellor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 817,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 829,
+            "src": "112:20:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 816,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "112:7:3",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 819,
+            "name": "test",
+            "nodeType": "VariableDeclaration",
+            "scope": 829,
+            "src": "137:16:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 818,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "137:4:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 827,
+              "nodeType": "Block",
+              "src": "755:31:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 825,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 822,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 817,
+                      "src": "762:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 823,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4883,
+                        "src": "770:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 824,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "770:10:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "762:18:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 826,
+                  "nodeType": "ExpressionStatement",
+                  "src": "762:18:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 828,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 820,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "745:2:3"
+            },
+            "returnParameters": {
+              "id": 821,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "755:0:3"
+            },
+            "scope": 829,
+            "src": "734:52:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 830,
+        "src": "67:722:3"
+      }
+    ],
+    "src": "0:791:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-02-20T22:47:02.793Z",
+  "devdoc": {
+    "methods": {
+      "addTip(uint256,uint256)": {
+        "details": "Allows the user to tip miners for the specified request using Tributes",
+        "params": {
+          "_requestId": "to tip",
+          "_tip": "amount"
+        }
+      },
+      "addTipWithEther(uint256)": {
+        "details": "Allows user to add tip with Ether by sending the ETH to the userContract and exchanging it for Tributes at the price specified by the userContract owner.",
+        "params": {
+          "_requestId": "to tip"
+        }
+      },
+      "getAnyDataAfter(uint256,uint256)": {
+        "details": "Allows the user to get the first value for the requestId after the specified timestamp",
+        "params": {
+          "_requestId": "is the requestId to look up the value for",
+          "_timestamp": "after which to search for first verified value"
+        },
+        "return": "bool true if it is able to retreive a value, the value, and the value's timestamp"
+      },
+      "getCurrentValue(uint256)": {
+        "details": "Allows the user to get the latest value for the requestId specified",
+        "params": {
+          "_requestId": "is the requestId to look up the value for"
+        },
+        "return": "bool true if it is able to retreive a value, the value, and the value's timestamp"
+      },
+      "getFirstVerifiedDataAfter(uint256,uint256)": {
+        "details": "Allows the user to get the first verified value for the requestId after the specified timestamp",
+        "params": {
+          "_requestId": "is the requestId to look up the value for",
+          "_timestamp": "after which to search for first verified value"
+        },
+        "return": "bool true if it is able to retreive a value, the value, and the value's timestamp, the timestamp after which it searched for the first verified value"
+      },
+      "requestData(string,string,uint256,uint256)": {
+        "details": "Allows the user to submit a request for data to the oracle using Tributes Allowing this prevents us from increasing spread too high (since if we set the price too hight users will just go to an exchange and get tokens from there)",
+        "params": {
+          "_granularity": "is the number of decimals miners should include on the submitted value",
+          "_request": "string API being requested to be mined",
+          "_symbol": "is the short string symbol for the api request",
+          "_tip": "amount the requester is willing to pay to be get on queue. Miners mine the onDeckQueryHash, or the api with the highest payout pool"
+        }
+      },
+      "requestDataWithEther(string,string,uint256)": {
+        "details": "Allows the user to submit a request for data to the oracle using ETH",
+        "params": {
+          "_granularity": "is the number of decimals miners should include on the submitted value",
+          "_request": "string API being requested to be mined",
+          "_symbol": "is the short string symbol for the api request"
+        }
+      },
+      "resultFor(bytes32)": {
+        "details": "Allows the user to get the latest value for the requestId specified using the  ADO specification for the standard inteface for price oracles",
+        "params": {
+          "_bytesId": "is the ADO standarized bytes32 price/key value pair identifier"
+        },
+        "return": "the timestamp, outcome or value/ and the status code (for retreived, null, etc...)"
+      },
+      "setUserContract(address)": {
+        "details": "allows owner to set the user contract address",
+        "params": {
+          "_userContract": "address"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "allows owner to transfer ownership",
+        "params": {
+          "_newOwner": "address"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
